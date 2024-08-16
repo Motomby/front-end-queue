@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sammy kitchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #4a4a4a;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffd700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        section {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4a4a4a;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #4a4a4a;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #ffed4a;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin:  auto;
+            max-width: 400px;
+        }
+
+        input, textarea {
+            width: 100%;
+            height: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius:25px;
+        }
+
+        button {
+            background-color: hsl(255, 3%, 73%);
+            color: #4a4a4a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ffed4a;
+        }
+
+        footer {
+            background-color: #4a4a4a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .auth-toggle {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .auth-toggle a {
+            color: #4a4a4a;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">sammy's Bites</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#auth" class="nav-link">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="active"><br><br>
+            <h1>Welcome to sammy's Bites</h1>
+            <p>Embark on a culinary journey with sammy's Bites. We bring the world's flavors to your doorstep, offering a unique blend of traditional and contemporary cuisine.</p>
+            <a href="#services" class="cta-button">Explore Our Menu</a><br><br>
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-item">
+                    <span class="menu-item-name">Bruschetta</span>
+                    <span class="menu-item-price">$8.99</span>
+        </section>
+
+        <section id="about"><br><br>
+            <h1>About Us</h1>
+            <p>sammy's Biteswas founded with a passion for bringing diverse, high-quality cuisine to food enthusiasts. Our team of expert chefs crafts each dish with care, using only the finest ingredients.</p>
+            <p>We believe in the power of food to bring people together and create memorable experiences. Join us in our culinary adventure!</p>
+        </section>
+
+        <section id="services"><br><br>
+            <h1>Our Services</h1>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h2>Gourmet Delivery</h2>
+                    <p>Enjoy restaurant-quality meals in the comfort of your home.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Catering</h2>
+                    <p>Let us make your events special with our professional catering services.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Cooking Classes</h2>
+                    <p>Learn from our expert chefs and elevate your culinary skills.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Meal Plans</h2>
+                    <p>Customized meal plans to fit your dietary needs and preferences.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact"><br><br>
+            <h1>Contact Us</h1>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="auth"><br><br>
+            <h1 id="auth-title">Login</h1>
+            <form id="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" id="auth-submit">Login</button>
+            </form>
+            <div class="auth-toggle">
+                <a id="auth-toggle-link">Don't have an account? Sign up</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 sammy's Bites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Form submission (for demonstration purposes)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+            contactForm.reset();
+        });
+
+        // Auth form toggle
+        const authForm = document.getElementById('auth-form');
+        const authTitle = document.getElementById('auth-title');
+        const authSubmit = document.getElementById('auth-submit');
+        const authToggleLink = document.getElementById('auth-toggle-link');
+        let isLogin = true;
+
+        authToggleLink.addEventListener('click', () => {
+            isLogin = !isLogin;
+            if (isLogin) {
+                authTitle.textContent = 'Login';
+                authSubmit.textContent = 'Login';
+                authToggleLink.textContent = "Don't have an account? Sign up";
+            } else {
+                authTitle.textContent = 'Sign Up';
+                authSubmit.textContent = 'Sign Up';
+                authToggleLink.textContent = "Already have an account? Login";
+            }
+        });
+
+        authForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const action = isLogin ? 'Login' : 'Sign Up';
+            alert(`${action} functionality is not implemented in this demo.`);
+            authForm.reset();
+        });
+    </script>
+</body>
+</html>

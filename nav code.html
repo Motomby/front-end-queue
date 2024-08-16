@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sammy's bites - Your Culinary Adventure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Auth Page Styles */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://source.unsplash.com/1600x900/?food');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .auth-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-form button:hover {
+            background-color: #ff4757;
+        }
+
+        .auth-form p {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .auth-form a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        /* Landing Page Styles */
+        header {
+            background-color: #666;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffd700;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="auth-page" class="auth-container">
+        <div class="auth-form" id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit" onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a></p>
+        </div>
+
+        <div class="auth-form hidden" id="signup-form">
+            <h2>Sign Up </h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="number" id="phone number" placeholder="phone number" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit" onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+        </div>
+    </div>
+
+    <div id="landing-page" class="hidden">
+        <header>
+            <nav class="container">
+                <div class="logo">sammy's bites</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section id="home"><br><br>
+                <h1>Welcome to sammy's bites</h1>
+                <p>Discover a world of flavors and culinary delights.</p>
+            </section>
+
+            <section id="services"><br><br>
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h2>Gourmet Delivery</h2>
+                        <p>Enjoy restaurant-quality meals in the comfort of your home.</p>
+                    </div>
+                    <div class="service-card">
+                        <h2>Catering</h2>
+                        <p>Let us make your events special with our professional catering services.</p>
+                    </div>
+                    <div class="service-card">
+                        <h2>Cooking Classes</h2>
+                        <p>Learn from our expert chefs and elevate your culinary skills.</p>
+                    </div>
+                    <div class="service-card">
+                        <h2>Meal Plans</h2>
+                        <p>Customized meal plans to fit your dietary needs and preferences.</p>
+                    </div>
+                </div>
+            </section>
+                <p>From gourmet recipes to cooking classes, we offer a range of services for food enthusiasts.</p>
+            </section>
+
+            <section id="about">
+                <h2>About Us</h2>
+                <p>sammy's bites  is your go-to platform for all things food. We're passionate about bringing the best culinary experiences to you.</p>
+                <p>We believe in the power of food to bring people together and create memorable experiences. Join us in our culinary adventure!</p>
+            </section>
+
+            <section id="contact"><br><br>
+                <h2>Contact Us</h2>
+        
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+                <p>Reach out to us at info@sammy'bite.com or call (237)678192349 for any inquiries.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 sammy'bites. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        function toggleForms() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            loginForm.classList.toggle('hidden');
+            signupForm.classList.toggle('hidden');
+        }
+
+        // Mock user database
+        const users = [];
+
+        // Login functionality
+        function login() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const user = users.find(u => u.username === username && u.password === password);
+            if (user) {
+                document.getElementById('auth-page').classList.add('hidden');
+                document.getElementById('landing-page').classList.remove('hidden');
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+
+        // Signup functionality
+        function signup() {
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            if (users.some(u => u.username === username)) {
+                alert('Username already exists. Please choose another.');
+            } else {
+                users.push({ username, email, password });
+                alert('Signup successful! Please login.');
+                toggleForms();
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('auth-page').classList.remove('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('login-username').value = '';
+            document.getElementById('login-password').value = '';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
